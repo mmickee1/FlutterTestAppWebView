@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_in_flutter/web_view_stack.dart';
 
+import 'navigation_controls.dart';
+
 void main() {
   runApp(
     MaterialApp(
@@ -33,10 +35,15 @@ class _WebViewAppState extends State<WebViewApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutter WebView'),
-      ),
-      body: const WebViewStack(),
+        appBar: AppBar(
+          title: const Text('Flutter WebView'),
+          // Add from here...
+          actions: [
+            NavigationControls(controller: controller),
+          ],
+          // ...to here.
+        ),
+        body: WebViewStack(controller: controller),
     );
   }
 }
