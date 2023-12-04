@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:webview_in_flutter/menu.dart';
 import 'package:webview_in_flutter/web_view_stack.dart';
 
 import 'navigation_controls.dart';
@@ -40,6 +41,7 @@ class _WebViewAppState extends State<WebViewApp> {
           // Add from here...
           actions: [
             NavigationControls(controller: controller),
+            Menu(controller: controller)
           ],
           // ...to here.
         ),
